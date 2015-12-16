@@ -7,6 +7,27 @@
         <element id="directory" name="classes">
           <element id="module-output" name="VolunteerWeiXinApp" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/WeiXinJars/dom4j-xstream/xpp3-1.1.4c.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/dom4j-xstream/xstream-1.3.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/dom4j-xstream/dom4j-2.0.0-ALPHA-2.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/ezmorph-1.0.3.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/commons-lang-2.3.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/json-lib-2.2.3-jdk15.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/commons-logging-1.1.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/commons-httpclient-3.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/commons-beanutils-1.7.0.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/json_jarAPI/commons-collections-3.2.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/JSTL/jstl.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/JSTL/standard.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/log4j2_jar/log4j-api-2.4.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/log4j2_jar/log4j-jcl-2.4.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/log4j2_jar/log4j-core-2.4.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/log4j2_jar/log4j-taglib-2.4.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/log4j2_jar/log4j-slf4j-impl-2.4.1.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/mysql-connector-java-5.1.34-bin.jar" />
+          <element id="file-copy" path="D:/WeiXinJars/tomcat-dbcp.jar" />
+        </element>
       </element>
     </root>
   </artifact>
