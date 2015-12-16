@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>发布项目</title>
+		<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FVvzFW5KiMX7OQAZ3CzhI0br"></script>
+        <style>
+        	body{
+        		background-color: #F8F8F8;
+        	}
+        	.container{
+        		margin-top: 4%;
+        	}
+        </style>
+	</head>
+	<body>
+		<div class="container">
+			<form>
+				<div class="form-group">
+					<label for="title" class="control-label">标题</label>
+					<input type="text" id="title" class="form-control" name="title"/>
+				</div>
+				<div class="form-group">
+					<label for="name" class="control-label">联系人</label>
+					<input type="text" id="name" class="form-control" name="name"/>
+				</div>
+				<div class="form-group">
+					<label for="tel" class="control-label">联系电话</label>
+					<input type="text" id="tel" class="form-control" name="tel"/>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="startTime">服务开始时间</label>
+					<input type="datetime" id="startTime" class="form-control" name="startTime"/>						
+				</div>
+				<div class="form-group">
+					<label for="stopTime" class="control-label">服务结束时间</label>
+					<input type="datetime" id="stopTime" class="form-control" name="stopTime"/>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="three">服务地点：</label>
+			            <div class="form-group">
+			            	<select name="city" class="form-control">
+								<option value="襄阳市">襄阳市</option>
+						    </select>
+			            </div>
+			            <div class="form-group">
+			            	<select name="suberbs" class="form-control">
+								<option value="襄城区">襄城区</option>
+								<option value="樊城区">樊城区</option>
+								<option value="襄州区">襄州区</option>
+							</select>
+			            </div>			
+					<input type="text" name="detailAdress" class="form-control" id="three" placeholder="详细地址"/>
+				</div>
+				<div class="form-group">
+					<label for="content" class="control-label">服务内容：</label>
+					<textarea id="content" class="form-control" rows="6"></textarea>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="BmapContainer">服务地址：</label>
+					<!--<input type="text" name="longitude" />
+					<input type="text" name="latitude" />-->
+					<div id="BmapContainer" class="well" style="height: 300px;"></div>
+					<script type="text/javascript" src="js/annoceItem.js" ></script>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn-lg btn-block btn-danger">提交</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
