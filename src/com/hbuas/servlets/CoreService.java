@@ -29,26 +29,19 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
 
        try{
            //调用parseXml方法解析request 中xml文档
-           //System.out.println("ddddddddddddddddddddddddddddd");
 
             Map<String,String> requestMap = MessageUtil.parseXml(request);
 
-           //System.out.println("Adduuuuuuuuuuuuuuuuuuuuuuuuuuu");
+
 
            //发送方账号
            String fromUserName = requestMap.get("FromUserName");
-           //System.out.println(fromUserName);
 
            //开发者的微信号
            String toUserName = requestMap.get("ToUserName");
            //消息类型
-           System.out.println("接收者"+toUserName);
-
            String msgType = requestMap.get("MsgType");
-
-           System.out.println("消息类型"+msgType);
-
- //11111111111111111111111111111111111111  消息推送
+           //  消息推送
            //文本消息
            if(msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)){
 
@@ -70,10 +63,9 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
            //图片消息
           else if(msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)){
 
-               String MediaId = requestMap.get("MediaId");//2222222222222
+               String MediaId = requestMap.get("MediaId");
                String PicUrl = requestMap.get("PicUrl");
 
-               System.out.println("进入图片消息体");
                sc.setAttribute("url",PicUrl);
                sc.setAttribute("id",MediaId);
 
@@ -89,16 +81,14 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
                imageMessage.setImage(image);
 
                respXml = MessageUtil.messageToXml(imageMessage);
-               System.out.println(respXml);
            }
 
            //语音消息
           else if(msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_VOICE)){
 
-               System.out.println("进入语音消息体");
-               String recognition = requestMap.get("Recognition");
-               System.out.println(recognition);
-               System.out.println(recognition + "11111");
+
+              // String recognition = requestMap.get("Recognition");//语音识别
+
 
                String MediaId = requestMap.get("MediaId");
                Voice voice = new Voice();
@@ -111,12 +101,11 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
                voiceMessage.setCreateTime(new Date().getTime());
                voiceMessage.setVoice(voice);
                respXml = MessageUtil.messageToXml(voiceMessage);//一定要记得将语音对象转换成xml
-               System.out.println(respXml);
            }
 
            //视屏消息
           else if(msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_VIDEO)){
-               respContent = "您发送的是视屏消息";
+               respContent = "您发送的是视频消息";
            }
 
            //地理位置消息
@@ -130,18 +119,18 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
            }
 
 
- //2222222222222222222222222222222222222事件推送
+
            ///事件推送
           else if(msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_EVENT)){
 
-               System.out.println("进入事件处理体");
+
                //事件类型
                String eventType = requestMap.get("Event");
 
                //关注
                if(eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)){
 
-                   System.out.println("进入关注事件体");
+
                    TextMessage textMessage  = new TextMessage();
                    textMessage.setFromUserName(toUserName);
                    textMessage.setToUserName(fromUserName);
@@ -150,7 +139,7 @@ public class CoreService {//以下创建的所有的消息对象，最终都会�
                    respContent = "您好,欢迎关注 zhiyuanxiangyang!";
                    textMessage.setContent(respContent);
                    respXml = MessageUtil.messageToXml(textMessage);
-                   System.out.print(respXml);
+
                }
 
                //取消关注

@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 
 /**
  * Created by 王成 on 2015/11/11.
+ * 2015/12/20 改动
  */
 
 
@@ -28,29 +29,20 @@ public class CoreServlet extends HttpServlet {
         String timestamp = request.getParameter("timestamp");
         String nonce = request.getParameter("nonce");
 
-        System.out.println(signature);
-        System.out.println(timestamp);
-        System.out.println(nonce);
+
 
         //请求校验
        PrintWriter out = response.getWriter();
         boolean flag =  SignUtil.CheckSignature(signature, timestamp, nonce);
         //如果校验成功
-        //System.out.print(flag);
         if(flag) {
             //调用核心服务类接收程序处理请求
-
-            System.out.println("a");
             String respXml = CoreService.processRequest(request);
-            System.out.println("b");
             out.print(respXml);//这个语句是发送给微信服务器的
-
-            System.out.println("开发者传回给用户的数据报！");
             System.out.println(respXml);//这个是显示到我的本地服务器的控制台的
         }
 
         out.close();
-        out = null;
     }
 
 
@@ -62,10 +54,6 @@ public class CoreServlet extends HttpServlet {
         String timestamp = request.getParameter("timestamp");
         String nonce = request.getParameter("nonce");
         String echostr = request.getParameter("echostr");
-        /*System.out.println(signature);
-        System.out.println(timestamp);
-        System.out.println(nonce);
-        System.out.println(echostr);*/
         //请求校验
         boolean flag =  SignUtil.CheckSignature(signature, timestamp, nonce);
         PrintWriter out = response.getWriter();

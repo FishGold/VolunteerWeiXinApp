@@ -46,7 +46,7 @@ public class MenuManager {
         ViewButton btn15 = new ViewButton();
         btn15.setName("个人注册");
         btn15.setType("view");
-        btn15.setUrl("http://111.177.117.94/four/html/index.html");
+        btn15.setUrl("http://111.177.117.94/four/html/myItems.html");
 
 
         ViewButton btn21 = new ViewButton();
