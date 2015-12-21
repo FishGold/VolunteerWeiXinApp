@@ -26,17 +26,17 @@ public class MenuManager {
         ViewButton btn11 = new ViewButton();
         btn11.setName("最新项目");
         btn11.setType("view");
-        btn11.setUrl("http://111.177.117.94/five/items");
+        btn11.setUrl("http://111.177.117.94/five/html/zss/newItems.html");
 
         ViewButton btn12 = new ViewButton();
         btn12.setName("项目发布");
         btn12.setType("view");
-        btn12.setUrl("http://www.iteye.com");
+        btn12.setUrl("http://111.177.117.94/five/html/zss/publishItem.html");
 
         ViewButton btn13 = new ViewButton();
         btn13.setName("服务计时");
         btn13.setType("view");
-        btn13.setUrl("http://111.177.117.94/five");
+        btn13.setUrl("http://111.177.117.94/five/html/zss/publishItem.html");
 
         ClickButton btn14 = new ClickButton();//111111111111111click
         btn14.setName("联系我们");
@@ -46,7 +46,7 @@ public class MenuManager {
         ViewButton btn15 = new ViewButton();
         btn15.setName("个人注册");
         btn15.setType("view");
-        btn15.setUrl("http://111.177.117.94/four/html/myItems.html");
+        btn15.setUrl("http://111.177.117.94/five/html/zss/publishItem.html");
 
 
         ViewButton btn21 = new ViewButton();
@@ -74,7 +74,7 @@ public class MenuManager {
         ViewButton btn32 = new ViewButton();
         btn32.setName("我的项目");
         btn32.setType("view");
-        btn32.setUrl("http://www.yi588.com");
+        btn32.setUrl("http://111.177.117.94/five/html/zss/myItems.html");
 
 
         ComplexButton mainBtn1 = new ComplexButton();
@@ -114,7 +114,7 @@ public class MenuManager {
         if (null != token) {
             // 创建菜单
           boolean result = MenuUtil.createMenu(getMenu(), token.getAccessToken());
-            //boolean result = MenuUtil.deleteMenu(token.getAccessToken());
+          // boolean result = MenuUtil.deleteMenu(token.getAccessToken());
 
             // 判断菜单创建结果
             if (result)

@@ -3,6 +3,7 @@ package com.hbuas.servlets;
 import com.hbuas.utils.SignUtil;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import java.io.PrintWriter;
  * 2015/12/20 改动
  */
 
-
+@WebServlet(name = "core",urlPatterns = "/check")
 //CoreServlet是一个核心的公共的请求的处理与相应类
 public class CoreServlet extends HttpServlet {
 
